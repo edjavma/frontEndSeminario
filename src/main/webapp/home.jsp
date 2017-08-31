@@ -4,30 +4,30 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Easy Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap/css/bootstrap.min.css' />">
+<link rel="stylesheet" href="<c:url value='css/bootstrap/css/bootstrap.min.css' />">
 <!-- Custom CSS -->
-<link rel="stylesheet" href="<c:url value='/resources/css/style.css' />">  
+<link rel="stylesheet" href="<c:url value='css/style.css' />">  
 <!-- Graph CSS -->
-<link rel="stylesheet" href="<c:url value='/resources/css/font-awesome.css'/>" > 
+<link rel="stylesheet" href="<c:url value='css/font-awesome.css'/>" > 
 <!-- jQuery -->
 <!-- lined-icons -->
-<link rel="stylesheet" type='text/css' href="<c:url value='/resources/css/icon-font.min.css'/>"  />
+<link rel="stylesheet" type='text/css' href="<c:url value='css/icon-font.min.css'/>"  />
 <!-- //lined-icons -->
 <!-- chart -->
-<script src="<c:url value='/resources/js/Chart.js'/>"></script>
+<script src="<c:url value='js/Chart.js'/>"></script>
 <!-- //chart -->
 <!--animate-->
-<link rel="stylesheet" type="text/css" media="all" href="<c:url value='/resources/css/animate.css'/>" >
+<link rel="stylesheet" type="text/css" media="all" href="<c:url value='css/animate.css'/>" >
 
 <!--//end-animate-->
 <!---//webfonts---> 
  <!-- Meters graphs -->
-<script src="<c:url value='/resources/js/jquery-1.10.2.min.js' />" ></script>
+<script src="<c:url value='js/jquery-1.10.2.min.js' />" ></script>
 <!-- Placed js at the end of the document so the pages load faster -->
 
 </head> 
@@ -50,37 +50,20 @@
 
 				<!--sidebar nav start-->
 					<ul class="nav nav-pills nav-stacked custom-nav">
-						<li class="active"><a href="index.html"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a></li>
 						<li class="menu-list">
 							<a href="#"><i class="lnr lnr-cog"></i>
-								<span>Components</span></a>
+								<span>Tesoreria</span></a>
 								<ul class="sub-menu-list">
-									<li><a href="grids.html">Grids</a> </li>
-									<li><a href="widgets.html">Widgets</a></li>
+									<li><a href="ingresos.html" target="iframe_a">Ingresos</a> </li>
+									<li><a href="egresos.html" target="iframe_a">Egresos</a></li>
 								</ul>
-						</li>
-						<li><a href="forms.html"><i class="lnr lnr-spell-check"></i> <span>Forms</span></a></li>
-						<li><a href="tables.html"><i class="lnr lnr-menu"></i> <span>Tables</span></a></li>              
-						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>MailBox</span></a>
+						</li>             
+						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>Alumnos</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="inbox.html">Inbox</a> </li>
-								<li><a href="compose-mail.html">Compose Mail</a></li>
+								<li><a href="app/views/ingresos.html">Ingreso</a> </li>
+								<li><a href="compose-mail.html">Busqueda</a></li>
 							</ul>
-						</li>      
-						<li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i> <span>Menu Levels</span></a>  
-							<ul class="sub-menu-list">
-								<li><a href="charts.html">Basic Charts</a> </li>
-							</ul>
-						</li>
-						<li><a href="codes.html"><i class="lnr lnr-pencil"></i> <span>Typography</span></a></li>
-						<li><a href="media.html"><i class="lnr lnr-select"></i> <span>Media Css</span></a></li>
-						<li class="menu-list"><a href="#"><i class="lnr lnr-book"></i>  <span>Pages</span></a> 
-							<ul class="sub-menu-list">
-								<li><a href="sign-in.html">Sign In</a> </li>
-								<li><a href="sign-up.html">Sign Up</a></li>
-								<li><a href="blank_page.html">Blank Page</a></li>
-							</ul>
-						</li>
+						</li>      						
 					</ul>
 				<!--sidebar nav end-->
 			</div>
@@ -111,7 +94,7 @@
 												</div>
 											</li>
 											<li><a href="#">
-											   <div class="user_img"><img src="<c:url value='/resources/images/1.png'/>" alt=""></div>
+											   <div class="user_img"><img src="<c:url value='images/1.png'/>" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet</p>
 												<p><span>1 hour ago</span></p>
@@ -119,7 +102,7 @@
 											   <div class="clearfix"></div>	
 											 </a></li>
 											 <li class="odd"><a href="#">
-												<div class="user_img"><img src="<c:url value='/resources/images/1.png'/>" alt=""></div>
+												<div class="user_img"><img src="<c:url value='images/1.png'/>" alt=""></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet </p>
 												<p><span>1 hour ago</span></p>
@@ -127,7 +110,7 @@
 											  <div class="clearfix"></div>	
 											 </a></li>
 											<li><a href="#">
-											   <div class="user_img"><img  alt="" src="<c:url value='/resources/images/1.png' />"></div>
+											   <div class="user_img"><img  alt="" src="<c:url value='images/1.png' />"></div>
 											   <div class="notification_desc">
 												<p>Lorem ipsum dolor sit amet </p>
 												<p><span>1 hour ago</span></p>
@@ -172,7 +155,8 @@
 			<!--notification menu end -->
 			</div>
 		<!-- //header-ends -->
-			<div id="page-wrapper">
+			<iframe src="demo_iframe.htm" name="iframe_a" width="100%" ></iframe>
+			<!-- <div id="page-wrapper">
 				<div class="graphs">
 					<div class="col_3">
 						<div class="col-md-3 widget widget1">
@@ -227,7 +211,7 @@
 	
 				</div>
 			<!--body wrapper start-->
-			</div>
+			</div>-->
 			 <!--body wrapper end-->
 		</div>
         <!--footer section end-->
@@ -235,9 +219,9 @@
       <!-- main content end-->
    </section>
   
-<script src="<c:url value='/resources/js/jquery.nicescroll.js'/> " ></script>
-<script src="<c:url value='/resources/js/scripts.js'/> " ></script>
+<script src="<c:url value='js/jquery.nicescroll.js'/> " ></script>
+<script src="<c:url value='js/scripts.js'/> " ></script>
 <!-- Bootstrap Core JavaScript -->
-   <script src="<c:url value='/resources/css/bootstrap/js/bootstrap.min.js' /> " ></script>
+   <script src="<c:url value='css/bootstrap/js/bootstrap.min.js' /> " ></script>
 </body>
 </html>

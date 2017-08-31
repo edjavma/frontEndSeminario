@@ -66,7 +66,7 @@
 	<script src="<c:url value='js/angular/lodash.min.js' />"></script>
 	<script src="<c:url value='js/angular/angular_route.js' />"></script>
 	<script src="<c:url value='js/angular/angular_resource.js' />"></script>
-	<script src="<c:url value='js/angular/angular_cookies.js' />"></script>
+	<!-- <script src="<c:url value='js/angular/angular_cookies.js' />"></script>-->
 	
 	<script src="<c:url value='app/app.js' />"></script>
 	<script src="<c:url value='app/controllers/loginController.js' />"></script>
