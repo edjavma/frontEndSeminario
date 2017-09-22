@@ -1,4 +1,4 @@
-appIngresos.controller('AlumnosController', function ($scope, AlumnosService,NgTableParams,$filter,toastr, $locale) {
+appIngresos.controller('AlumnosController', function ($scope, AlumnosService,NgTableParams,$filter,toastr, $locale,$http) {
 
     //Loads all Employee records when page loads
         $scope.data = {};
