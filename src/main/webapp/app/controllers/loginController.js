@@ -2,7 +2,7 @@ angular.module('umgApp').controller('loginController', function($scope, $resourc
 
 	
 		$scope.message = "";
-	    $scope.encoded = btoa("umgapp:umgapp2017");
+	    $scope.encoded = btoa("umg:secret");
 	    $scope.data = {
     	        grant_type:"password", 
     	        username: "", 
@@ -14,7 +14,7 @@ angular.module('umgApp').controller('loginController', function($scope, $resourc
 	    	
 	        var req = {
 	            method: 'POST',
-	            url: "http://localhost:8083/SeminarioUmg/oauth/token",
+	            url: "http://34.233.183.228:8080/seminario/oauth/token",
 	            headers: {
 	                "Authorization": "Basic " + $scope.encoded,
 	                "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
@@ -26,11 +26,12 @@ angular.module('umgApp').controller('loginController', function($scope, $resourc
 	            $http.defaults.headers.common.Authorization = 
 	              'Bearer ' + data.data.access_token;
 	           // $cookies.put("access_token", data.data.access_token);
-	            window.location.href="/SeminarioFrontEnd/home.jsp";
+	            window.location.href="/SeminarioFrontEnd/home.html";
 	        },function(error){
 	        	$scope.username = null;
 	        	$scope.password = null;
 	        	$scope.message = "error en credenciales";
+	        	 //window.location.href="home.html";
 	        	console.log(error);
 	        });   
 	    }   

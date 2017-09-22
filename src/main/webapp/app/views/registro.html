@@ -1,0 +1,60 @@
+<div class="container" ng-app="appIngre" style="margin-top:5%;">
+      <h1>Registro de Estudiantes</h1>
+      <hr>
+
+      <form role="form" name="forma">
+
+        <div class="form-group" ng-class="{'has-error': forma.CarnetU.$invalid, 'has-success': forma.CarnetU.$valid}">
+          <label for="inputCarnet">CARNET</label>
+          <input id="inputCarnet" type="text" class="form-control" placeholder="Carnet" name="CarnetU" ng-model="Carnet" required>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': forma.NombresU.$invalid, 'has-success': forma.NombresU.$valid}">
+          <label for="inputNombres">NOMBRES</label>
+          <input id="inputNombres" type="text" class="form-control" placeholder="Nombres" name="NombresU" ng-model="Nombres" required>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': forma.apellidosU.$invalid, 'has-success': forma.apellidosU.$valid}">
+          <label for="inputApellidos">APELLIDOS</label>
+          <input id="inputApellidos" type="text" class="form-control" placeholder="Apellidos" name="apellidosU" ng-model="Apellidos" required>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': forma.emailU.$invalid, 'has-success': forma.emailU.$valid}">
+          <label for="inputEmail">Email</label>
+          <input id="inputEmail" type="email" class="form-control" placeholder="Email" name="emailU" ng-model="Email" required>
+          <div ng-show="forma.emailU.$dirty && forma.emailU.$invalid">
+            <p class="help-block text-danger" ng-show="forma.emailU.$error.required">Campo obligatorio</p>
+            <p class="help-block text-danger" ng-show="forma.emailU.$error.email">Email invalido</p>
+          </div>
+        </div>
+
+        <button class="btn btn-success" ng-disabled="forma.$invalid" ng-click="registrar();">GUARDAR</button>
+      </form>
+
+	<!-- <div  class="container" >
+    	<h1>Asignar Cursos</h1>
+
+    	<div class="panel-body">
+	        <table class="table table-striped">
+	          <thead>
+	          <tr>
+	            <th>
+	              <a href="" ng-click="ordenarPor('nombre')">
+	                CODIGO CURSO
+	              </a>
+	              <span class="caret" style="cursor: pointer" ng-click="ordenarPor('-nombre')"></span>
+	            </th>
+	            <th>NOMBRE CURSO</th>
+	          </tr>
+	          </thead>
+	          <tbody>
+	          <tr ng-repeat="empleado in empleados | orderBy:ordenSeleccionado | filter:buscar">
+	            <td>{{empleado.nombre}}</td>
+	            <td>{{empleado.paterno | uppercase}}</td>
+	          </tr>
+	          </tbody>
+	        </table>
+      	</div>
+
+    </div>  -->     
+</div>    

@@ -1,4 +1,4 @@
-angular.module('appIngre')
+appIngresos
 	.controller('ingresosController', function($scope,ingresosService,NgTableParams,$filter,toastr, $locale) {
 
 		$scope.data = {};
@@ -8,21 +8,23 @@ angular.module('appIngre')
 		$scope.getIngresos = function(){
 			ingresosService.obtenerIngresos()
 			.then(function(data){
+				console.log(data);
 				$scope.ingresos = data;
 				$scope.originalData = angular.copy($scope.ingresos);
-				$scope.userTable = new NgTableParams({count:5}, {counts: [] ,dataset: $scope.ingresos});	
-				toastr.info('Se cargo la Lista Correctamente','Informacion: ',{
-					iconClass: 'toast-info'
-				});
+				$scope.userTable = new NgTableParams({count:5}, {counts: [] ,dataset: $scope.ingresos});					
 			},function(error){
 				console.log(error);
 			});
 		}
 
 		$scope.guardar = function(){
+			$scope.data.tipo = 1;
+			$scope.data.fecha = moment().format().toString(); 
 			ingresosService.guardarIngreso($scope.data)
 			.then(function(data){
-				toastr.success('Se guardo correctamente','Informacion: ');
+				alert("creado exitosamente");
+				$scope.data = {};
+				$scope.getIngresos();
 			},function(error){
 				console.log(error);
 			});

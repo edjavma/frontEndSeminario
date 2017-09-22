@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Egresos</title>
-	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/ng-table.min.css">    
-  <link rel="stylesheet" type="text/css" href="css/angular-toastr.min.css" />
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-</head>
-<style type="text/css">
-  .editable-table > tbody > tr > td {
-        padding: 4px
-      }
-      .editable-text {
-        padding-left: 4px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        display: inline-block;
-      }
-      .editable-table tbody > tr > td > .controls {
-        //width: 100%
-      }
-      .editable-input {
-        padding-left: 3px;
-      }
-      .editable-input.input-sm {
-        height: 30px;
-        font-size: 14px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-      }
-</style>
-<body ng-app="appIngre">
-<div ng-controller="egresosController" ng-init="getEgresos()">
+<div class="container" ng-app="appIngre" ng-init="getEgresos()">
   	<div class="container">
 		<div class="row" style="margin-top:5%;margin-bottom: 5%;">
 			<div class="col-md-12" style="background-color:#28b463;border-radius: 15px;" >
@@ -132,21 +98,4 @@
      
   </div> 
 </div>
-
-  <script type="text/javascript" src="js/angular/angular.min.js"></script>
-  <script type="text/javascript" src="js/angular/angular-animate.min.js"></script>
-  <script type="text/javascript" src="js/angular/ng-table.min.js"></script>
-   <script type="text/javascript" src="js/angular/lodash.min.js"></script>
-  <script type="text/javascript" src="js/angular/angular-toastr.tpls.min.js"></script>
-  
-
-  <script type="text/javascript" src="app/app2.js"></script>
-  <script type="text/javascript" src="app/controllers/egresosController.js"></script>
-  <script type="text/javascript" src="app/services/egresosService.js"></script>
-
-  <script type="text/javascript" src="app/directives/trackedTable.js"></script>
-  <script type="text/javascript" src="app/directives/trackedTableCell.js"></script>
-  <script type="text/javascript" src="app/directives/trackedTableRow.js"></script>
-</body>
-</html>     
- <!-- completar la carpeta de app con sus archivos  --> 
+</div> 

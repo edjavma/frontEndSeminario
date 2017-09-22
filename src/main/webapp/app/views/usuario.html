@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<form class="form-horizontal">
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="user">Usuario:</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="user" placeholder="Ingresar Usuario" ng-model="data.username">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="pwd">Password:</label>
+			    <div class="col-sm-10"> 
+			      <input type="password" class="form-control" id="pwd" placeholder="Ingresar Password" ng-model="data.pass">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="pwd">Role:</label>
+			    <div class="col-sm-10"> 
+			      <select ng-init="getRoles()" ng-model = "data.rol" id="rol" name="rol"  class="form-control" required>
+			      	<option ng-repeat="rol in roles" value="{{rol}}">{{rol}}</option>
+                   </select>
+			    </div>
+			  </div>
+			  <div class="form-group"> 
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button class="btn btn-success" ng-click="guardar()">Ingresar</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-angular.module('appIngre')
+appIngresos
 	.controller('egresosController', function($scope,egresosService,NgTableParams,$filter,toastr, $locale) {
 
 		$scope.data = {};

@@ -1,0 +1,35 @@
+<div class="container" ng-app="appIngresos">
+  <div class="panel" data-ng-controller="validationCtrl">
+  <div class="panel-heading border">    
+    <h2>Data table using jquery datatable in Angularjs
+    </h2>
+  </div>
+  <div class="panel-body">
+      <table class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Age</th>
+          <th>Start Date</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr ng-repeat="n in data">
+            <td>{{$index+1}}</td>
+            <td>{{n[0]}}</td>
+            <td>{{n[1]}}</td>
+            <td>{{n[2]}}</td>
+            <td>{{n[3]}}</td>
+            <td>{{n[4] | date:'dd/MM/yyyy'}}</td>
+            <td>                                    <a  class="btn btn-info" data-toggle="modal" data-target="#Update" ng-click="get(emp)">Verss</a>
+</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+</div>

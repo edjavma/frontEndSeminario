@@ -7,20 +7,255 @@
   <version>1.0.0</version>
   <name>SeminarioFrontEnd Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-    <groupId>jstl</groupId>
-    <artifactId>jstl</artifactId>
-    <version>1.2</version>
-</dependency>
-  </dependencies>
-  <build>
-    <finalName>SeminarioFrontEnd</finalName>
-  </build>
+    <properties>
+		<java.version>1.8</java.version>
+		
+		<!-- Hibernate -->
+		<hibernate.version>4.3.9.Final</hibernate.version>
+		<dbcp2.version>2.1</dbcp2.version>
+		<mysql.version>5.1.35</mysql.version>
+		
+		<!-- Spring -->
+		<spring.version>4.1.6.RELEASE</spring.version>
+		<spring-data-jpa.version>1.8.0.RELEASE</spring-data-jpa.version>
+		<spring-security.version>4.0.1.RELEASE</spring-security.version>
+		
+	</properties>
+
+	<dependencies>
+
+	
+		<!-- Spring                                      -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>           <!-- Core utilities (org.springframework.core.* / org.springframework.util.*) -->
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>        <!-- Application Context (Spring's Dependency Injection) -->
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>            <!-- Web application development utilities (org.springframework.web.*) -->
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>         <!-- Spring MVC for Servlet Environments (org.springframework.web.servlet.*) -->
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>             <!-- Transaction Management Abstraction (org.springframework.transaction.* / org.springframework.dao.*) -->
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>            <!-- Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA (org.springframework.orm.*) -->
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>            <!-- Aspect Oriented Programming (AOP) Framework (org.springframework.aop.*) -->
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>     <!-- Expression Language (org.springframework.expression.*) -->
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- Spring Security                             -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
+
+	    
+	   	    
+		<!-- Spring Data                                 -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring-data-jpa.version}</version>
+		</dependency>
+		
+		
+		<!-- DB                                          -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>${dbcp2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Servlet                                     -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>jstl-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jstl-impl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+		
+		<!-- Rest + JSON -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+		
+
+		<dependency> 
+		    <groupId>xml-apis</groupId>
+		    <artifactId>xml-apis</artifactId>
+		    <version>1.4.01</version>
+		</dependency>
+
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>org.springframework.maven.release</id>
+			<name>Spring Maven Release Repository</name>
+			<url>http://repo.springsource.org/release</url>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>false</enabled></snapshots>
+		</repository>
+		<!-- For testing against latest Spring snapshots -->
+		<repository>
+			<id>org.springframework.maven.snapshot</id>
+			<name>Spring Maven Snapshot Repository</name>
+			<url>http://repo.springsource.org/snapshot</url>
+			<releases><enabled>false</enabled></releases>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+		<!-- For developing against latest Spring milestones -->
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://repo.springsource.org/milestone</url>
+			<snapshots><enabled>false</enabled></snapshots>
+		</repository>
+
+
+		<repository>
+			<id>neo4j-release-repository</id>
+			<name>Neo4j Maven 2 release repository</name>
+			<url>http://m2.neo4j.org/content/repositories/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>		
+		<repository>
+			<id>neo4j-snapshot-repository</id>
+			<name>Neo4j Maven 2 snapshot repository</name>
+			<url>http://m2.neo4j.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		
+		<!--  -->
+	    
+	    
+		<repository>
+			<id>jboss-public-repo</id>
+			<url>http://repository.jboss.org/maven2/</url>
+			<name>JBoss public available repo</name>
+		</repository>
+		
+	</repositories>
+	
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>	
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<warName>SeminarioFrontEnd</warName>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>SeminarioFrontEnd</finalName>
+	</build>
 </project>
