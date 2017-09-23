@@ -31,7 +31,7 @@ appIngresos.service('AlumnosService', function ($q,$http) {
         });
         return request;*///
     //return $http.post("http://34.233.183.228:8080/seminario/alumno/adduseralumno?nocarnet=1990-14-10076&correo=juan_cunquero%40hotmail.com");
-       return $http.post(wsUrl+"/seminario/alumno/adduseralumno?nocarnet="+Estudiante.nocarnet+"&correo="+Estudiante.correo);
+       return $http.post(wsUrl+"/seminario/alumno/adduseralumno?nocarnet="+Estudiante.nocarnet+"&correo="+Estudiante.correo+"&idUsuario="+Estudiante.idUsuario);
 
     }
 
@@ -57,7 +57,7 @@ appIngresos.service('AlumnosService', function ($q,$http) {
 		},function(error){
 			deferred.reject(error);
 		});
-		return deferred.promise
+		return deferred.promise;
     }
 
     this.delete = function (Estudiante) {
@@ -67,5 +67,17 @@ appIngresos.service('AlumnosService', function ($q,$http) {
             url: wsUrl + Estudiante.nocarnet
         });
         return deleterecord;
+    }
+    
+    
+    this.usuarioSession = function(){
+    	var deferred = $q.defer();
+    	$http.get('/SeminarioFrontEnd/user')
+    	.then(function(response){
+    		deferred.resolve(response.data);    		
+    	},function(error){
+    		deferred.reject(error);
+    	});
+    	return deferred.promise;
     }
 });

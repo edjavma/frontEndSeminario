@@ -220,14 +220,13 @@
 									</div>	
 								</a>
 								<ul class="dropdown-menu drp-mnu">									
-									<li> <a  href="#/passw"><i class="fa fa-sign-out"></i>Cambiar Password</a> </li>
+									<!-- <li> <a  href="#/passw"><i class="fa fa-sign-out"></i>Cambiar Password</a> </li> -->
 									<li> <a href="javascript:formSubmit()"><i class="fa fa-sign-out"></i> Logout</a> </li>
 								</ul>
 							</li>
 							<div class="clearfix"> </div>
 						</ul>
-						<c:url value="/logout" var="logoutUrl" />
-						<form action="${logoutUrl}" method="post" id="logoutForm">
+						<form action="<c:url value='/login'/>" method="post" id="logoutForm">
 							<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
 						</form>

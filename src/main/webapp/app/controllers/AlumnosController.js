@@ -4,17 +4,11 @@ appIngresos.controller('AlumnosController', function ($scope, AlumnosService,NgT
         $scope.data = {};
         $scope.ingresos = {};       
         $scope.originalData = {};
-        $scope.usuario = {};
+       
     //loadAlumnos();
     var alumnos;
     $scope.loadAlumnos = function(){
-    	$http.get('/SeminarioFrontEnd/user')
-    	.then(function(response){
-    		$scope.usuario = response.data;
-    	},function(error){
-    		alert(error);
-    	});
-    	
+    	    	
         var EmployeeRecords = AlumnosService.getAllStudents();
         EmployeeRecords.then(function (d) {     //success
             $scope.Estudiantes = d.data;
@@ -100,23 +94,34 @@ appIngresos.controller('AlumnosController', function ($scope, AlumnosService,NgT
       };
     //save form data
     $scope.save = function () {
+    	
+    	
+    	AlumnosService.usuarioSession()
+    	.then(function(data){
+    		 var usuario = data;
+    		
+    			var Estudiante = {
+    	            nocarnet:$scope.noCarnetAct,
+    	            correo: $scope.correoAct,
+    	            idUsuario: usuario.userId
+    	        };
+    	        var saverecords = AlumnosService.save(Estudiante);
+    	        saverecords.then(function (response) {
+    	            $scope.EmpNo = response.status;
+    	            alert('Datos almacenados correctamente');
+    	            $scope.loadAlumnos();
+    	            //loadEmployees();
+    	            
+    	        },
+    	        function(response){
+    	         alert('ha ocurrido un error al guardar la informacion' + response.status);
+    	        });
+    	},function(error){
+    		alert(error);
+    	});
         //debugger;    	
-        var Estudiante = {
-            nocarnet:$scope.noCarnetAct,
-            correo: $scope.correoAct,
-            idUsuario: $scope.usuario.userId
-        };
-        var saverecords = AlumnosService.save(Estudiante);
-        saverecords.then(function (response) {
-            $scope.EmpNo = response.status;
-            alert('Datos almacenados correctamente');
-            //$scope.loadAlumnos();
-            //loadEmployees();
-            
-        },
-        function(response){
-         alert('ha ocurrido un error al guardar la informacion' + response.status);
-     });
+    	
+        
     }
 
 
@@ -135,7 +140,7 @@ appIngresos.controller('AlumnosController', function ($scope, AlumnosService,NgT
         $scope.noCarnetAct = Student.noCarnet;
         $scope.correoAct = Student.correo;
         $scope.asignaciones = Student.asignaciones;
-        $scope.nombreAct = Student.nombres + " " + Student.apellidos
+        $scope.nombreAct = Student.nombres + " " + Student.apellidos;
     }
 
     $scope.get = function (Student) {
