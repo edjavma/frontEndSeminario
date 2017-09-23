@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 	//	.antMatchers("/home","/").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
 	//	.antMatchers("/competition").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
-		.antMatchers("/welcome/**").access("hasRole('ROLE_ADMIN')")
+		.antMatchers("/welcome/**").authenticated()
 		.antMatchers("/user/**").authenticated()
 		.and()
 		  .formLogin().loginPage("/login")

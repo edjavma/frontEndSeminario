@@ -101,7 +101,7 @@
 								</ul>
 						</li>             
 						</sec:authorize>
-						<sec:authorize access="hasRole('ROLE_ADMIN') or hasTole('ROLE_VENTA')">
+						<sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_VENTA')">
 						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>Alumnos</span></a>
 							<ul class="sub-menu-list">
 								<li><a href="#/Alumnos">Ingresos</a> </li>
