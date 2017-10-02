@@ -40,6 +40,14 @@ appIngresos.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'app/views/contraseña.html',
         controller: 'passwordController'
     })
+    .when('/Catedraticos', {
+        templateUrl: 'app/views/Catedraticos.html',
+        controller: 'CatedraticosController'
+    })
+    .when('/cursos', {
+        templateUrl: 'app/views/Cursos.html',
+        controller: 'cursosController'
+    })
     .otherwise({
             redirectTo: '/'
         });

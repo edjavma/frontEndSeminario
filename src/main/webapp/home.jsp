@@ -121,7 +121,7 @@
 								</ul>
 						</li>
 						</sec:authorize>
-						<sec:authorize access="hasRole('ROLE_ALUMNO')">
+						<sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_ALUMNO')">
 						<li class="menu-list">
 							<a href="#"><i class="lnr lnr-cog"></i>
 								<span>Mi información</span></a>
@@ -131,13 +131,15 @@
 						</li>       						
 						</sec:authorize>
 						
-						<sec:authorize access="hasRole('ROLE_CATEDRATICO')">
+						<sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_CATEDRATICO')">
 						<li class="menu-list">
 							<a href="#"><i class="lnr lnr-cog"></i>
 								<span>Catedratico</span></a>
 								<ul class="sub-menu-list">
+								<sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_VENTA')">
+									<li><a href="#/Catedraticos" >Pagos</a> </li>
+							    </sec:authorize>
 									<li><a href="#/cursos" >Cursos</a> </li>
-									<li><a href="#/cursos" >Alumnnos</a> </li>
 								</ul>
 						</li>       						
 						</sec:authorize>
@@ -286,6 +288,8 @@
   <script type="text/javascript" src="app/controllers/mapController.js"></script>
    <script type="text/javascript" src="app/controllers/usuarioController.js"></script>
    <script type="text/javascript" src="app/controllers/passwordController.js"></script>
+   <script type="text/javascript" src="app/controllers/CatedraticosController.js"></script>
+   <script type="text/javascript" src="app/controllers/cursosController.js"></script>
   
   <!-- Servicios -->
   <script type="text/javascript" src="app/services/AlumnosService.js"></script>
@@ -294,6 +298,8 @@
   <script type="text/javascript" src="app/services/mapService.js"></script>
   <script type="text/javascript" src="app/services/usuarioService.js"></script>
   <script type="text/javascript" src="app/services/passwordService.js"></script>
+  <script type="text/javascript" src="app/services/CatedraticosService.js"></script>
+  <script type="text/javascript" src="app/services/cursosService.js"></script>
   
   <!--  Directivas -->
    <script type="text/javascript" src="app/directives/trackedTable.js"></script>
