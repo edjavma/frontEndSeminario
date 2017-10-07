@@ -138,8 +138,10 @@
 								<ul class="sub-menu-list">
 								<sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_VENTA')">
 									<li><a href="#/Catedraticos" >Pagos</a> </li>
-							    </sec:authorize>
+							    
 									<li><a href="#/cursos" >Cursos</a> </li>
+									</sec:authorize>
+									<li><a href="#/cursosCat" >Cursos Asignados</a> </li>
 								</ul>
 						</li>       						
 						</sec:authorize>
@@ -290,6 +292,7 @@
    <script type="text/javascript" src="app/controllers/passwordController.js"></script>
    <script type="text/javascript" src="app/controllers/CatedraticosController.js"></script>
    <script type="text/javascript" src="app/controllers/cursosController.js"></script>
+   <script type="text/javascript" src="app/controllers/cursosCatedratico.js"></script>
   
   <!-- Servicios -->
   <script type="text/javascript" src="app/services/AlumnosService.js"></script>
@@ -300,6 +303,7 @@
   <script type="text/javascript" src="app/services/passwordService.js"></script>
   <script type="text/javascript" src="app/services/CatedraticosService.js"></script>
   <script type="text/javascript" src="app/services/cursosService.js"></script>
+   <script type="text/javascript" src="app/services/cursosCatedratico.js"></script>
   
   <!--  Directivas -->
    <script type="text/javascript" src="app/directives/trackedTable.js"></script>

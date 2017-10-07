@@ -48,6 +48,10 @@ appIngresos.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'app/views/Cursos.html',
         controller: 'cursosController'
     })
+    .when('/cursosCat', {
+        templateUrl: 'app/views/cursosCatedratico.html',
+        controller: 'cursosCatController'
+    })
     .otherwise({
             redirectTo: '/'
         });
