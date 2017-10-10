@@ -33,7 +33,6 @@ public class HomeController {
 		public ModelAndView welcome(){
 			ModelAndView model = new ModelAndView();
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-			System.out.println(auth.getName());
 			model.addObject("username",auth.getName());
 			
 			Client client = Client.create();

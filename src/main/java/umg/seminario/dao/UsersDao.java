@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.NonUniqueResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
@@ -33,6 +35,8 @@ class UsersDaoImpl implements UsersDao {
 					.createNamedQuery("Users.findByUsername", Users.class);
 			query.setParameter("username", username);
 			return query.getSingleResult();
+		} catch (NoResultException | NonUniqueResultException  nr){
+			return null;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -42,7 +46,6 @@ class UsersDaoImpl implements UsersDao {
 	@Override
 	public List<Rol> findRolesById(String username) {
 		try {
-			System.out.println(username);
 			TypedQuery<Rol> query = entityManager
 					.createNamedQuery("Userole.NativeQuery", Rol.class);
 			query.setParameter(1, username);

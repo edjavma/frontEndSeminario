@@ -126,12 +126,12 @@
 							<a href="#"><i class="lnr lnr-cog"></i>
 								<span>Mi información</span></a>
 								<ul class="sub-menu-list">
-									<li><a href="#/cursos" >Cursos</a> </li>
+									<li><a href="#/alumnos" >Cursos</a> </li>
 								</ul>
 						</li>       						
 						</sec:authorize>
 						
-						<sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_CATEDRATICO')">
+						<sec:authorize access="hasRole('ROLE_ADMIN') or hasRole('ROLE_CATEDRATICO') or hasRole('ROLE_VENTA')">
 						<li class="menu-list">
 							<a href="#"><i class="lnr lnr-cog"></i>
 								<span>Catedratico</span></a>
