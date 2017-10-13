@@ -293,6 +293,7 @@
    <script type="text/javascript" src="app/controllers/CatedraticosController.js"></script>
    <script type="text/javascript" src="app/controllers/cursosController.js"></script>
    <script type="text/javascript" src="app/controllers/cursosCatedratico.js"></script>
+   <script type="text/javascript" src="app/controllers/infoAlumnosController.js"></script>
   
   <!-- Servicios -->
   <script type="text/javascript" src="app/services/AlumnosService.js"></script>
@@ -304,6 +305,7 @@
   <script type="text/javascript" src="app/services/CatedraticosService.js"></script>
   <script type="text/javascript" src="app/services/cursosService.js"></script>
    <script type="text/javascript" src="app/services/cursosCatedratico.js"></script>
+   <script type="text/javascript" src="app/services/infoAlumnosService.js"></script>
   
   <!--  Directivas -->
    <script type="text/javascript" src="app/directives/trackedTable.js"></script>

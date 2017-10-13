@@ -9,7 +9,7 @@ appIngresos
 		$scope.getCursos = function(){
 			cursosCatService.usuarioSession()
 			.then(function(data){
-				cursosService.obtenerCursos(data.userId)
+				cursosService.obtenerCursos(data.username)
 				//cursosCatService.obtenerCursos(1873)
 				.then(function(data){
 					$scope.cursos = data;							
@@ -37,6 +37,7 @@ appIngresos
 			cursosCatService.obtenerAlumnos($scope.data.idCurso)
 				.then(function(data){
 					$scope.alumnos = data;
+					console.log(data);
 					$scope.userTable = new NgTableParams({count:10}, {counts: [] ,dataset: $scope.alumnos});	
 				},function(error){
 					console.log(error);
@@ -48,5 +49,6 @@ appIngresos
 		}
 
 		
+			
 
 });

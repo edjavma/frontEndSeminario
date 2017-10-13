@@ -1,16 +1,21 @@
 <div class="panel panel-default" style="margin-top:5%;" ng-init="getCursos()">
+	<form class="form-horizontal"  action="/SeminarioFrontEnd/document" method="POST">
 	<div class="panel-body">
-	<form class="form-horizontal">
+	
 		<div class="form-group">
 			<label class="control-label col-sm-2">Curso:</label>
 		    <div class="col-sm-10">
-		      <select ng-model="data.idCurso" class="form-control" ng-change="getAlumnos()">
+		      <select ng-model="data.idCurso" name="idCurso" class="form-control" ng-change="getAlumnos()">
 		      	<option ng-repeat="curso in cursos" value="{{curso.idCurso}}">{{curso.nombre + ' - Seccion ' + curso.seccion}}</option>
 		      </select>
 		    </div>
 		</div>
-	</form>
+	
 	</div>
+	<div class="panel-footer text-rigth" ng-if="data.idCurso != null && data.idCurso != undefined">
+		<input type="submit" value="Exportar" />
+	</div>
+	</form>
 </div>
 <hr/>
 <div class="panel panel-default" ng-if="alumnos.length > 0">
